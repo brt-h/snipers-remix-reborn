@@ -6,10 +6,10 @@
 		255,
 		255,
 		217,
-		25,
+		80,
 	]
-	m_flConstantRadius = 400.000000
-	m_flConstantLifespan = 10.000000
+	m_flConstantRadius = 550.000000
+	m_flConstantLifespan = 14.000000
 	m_Operators =
 	[
 		{
@@ -19,6 +19,9 @@
 			_class = "C_OP_InterpolateRadius"
 			m_flEndTime = 0.050000
 			m_flStartScale = 0.000000
+			m_bEaseInAndOut = true
+			m_flEndScale = 2.000000
+			m_flBias = 0.750000
 		},
 		{
 			_class = "C_OP_FadeInSimple"
@@ -34,7 +37,10 @@
 		{
 			_class = "C_OP_RenderSprites"
 			m_nOrientationType = 2
-			m_hTexture = resource:"materials/particle/basic_glow.vtex"
+			m_hTexture = resource:"materials/particle/particle_glow_01.vtex"
+			m_flMaxSize = 10000000000.000000
+			m_flStartFadeSize = 10000000000000.000000
+			m_flEndFadeSize = 2.000000
 		},
 	]
 	m_Emitters =
@@ -42,6 +48,24 @@
 		{
 			_class = "C_OP_InstantaneousEmitter"
 			m_nParticlesToEmit = 1
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin =
+			[
+				0.000000,
+				0.000000,
+				150.000000,
+			]
+			m_OffsetMax =
+			[
+				0.000000,
+				0.000000,
+				150.000000,
+			]
 		},
 	]
 }
