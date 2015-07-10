@@ -1,0 +1,124 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nMaxParticles = 300
+	m_ConstantColor =
+	[
+		249,
+		242,
+		161,
+		160,
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderRopes"
+			m_flTextureVWorldSize = 1000.000000
+			m_flTextureVScrollRate = 100.000000
+			m_flTextureVOffset = 3.750000
+			m_hTexture = resource:"materials/particle/particle_glow_01.vtex"
+		},
+	]
+	m_Operators =
+	[
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_flFadeStartTime = 0.500000
+			m_ColorFade =
+			[
+				243,
+				240,
+				190,
+				255,
+			]
+		},
+		{
+			_class = "C_OP_MovementRotateParticleAroundAxis"
+		},
+		{
+			_class = "C_OP_SpinUpdate"
+		},
+		{
+			_class = "C_OP_FadeAndKillForTracers"
+			m_flEndFadeInTime = 0.800000
+			m_flStartFadeOutTime = 0.800000
+			m_flEndFadeOutTime = 0.900000
+			m_flStartAlpha = 0.000000
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartTime = 0.500000
+			m_flEndScale = 0.000000
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RingWave"
+			m_flParticlesPerOrbit = 500.000000
+			m_flInitialRadius = 500.000000
+			m_flInitialSpeedMin = -175.000000
+			m_flInitialSpeedMax = -175.000000
+			m_bEvenDistribution = true
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin =
+			[
+				0.000000,
+				0.000000,
+				150.000000,
+			]
+			m_OffsetMax =
+			[
+				0.000000,
+				0.000000,
+				150.000000,
+			]
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmissionDuration = 1.500000
+			m_flEmitRate = 10.000000
+		},
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmissionDuration = 1.500000
+			m_flStartTime = 4.600000
+			m_flEmitRate = 10.000000
+		},
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmissionDuration = 1.500000
+			m_flStartTime = 9.200000
+			m_flEmitRate = 10.000000
+		},
+	]
+	m_flConstantRotationSpeed = 5.000000
+	m_flConstantLifespan = 3.000000
+	m_Children =
+	[
+		{
+			m_ChildRef = resource:"particles/farsight_01/fx_farsight_trail_03.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/farsight_01/fx_farsight_trail_04.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/farsight_01/fx_farsight_trail_border.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/farsight_01/fx_farsight_trail_star.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/farsight_01/fx_farsight_flash_glow.vpcf"
+		},
+	]
+	m_flConstantRadius = 25.000000
+}
